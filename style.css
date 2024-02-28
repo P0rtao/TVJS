@@ -17,20 +17,23 @@ body {
     left: 26%;
     top: 10%;
 
-    padding: 15px;
+    padding: 20px;
+    opacity: 0%;
 
     background-color: rgb(10, 10, 10);
     border: 10px solid gray;
     border-radius: 50px;
     
     width: 800px;
-    height: 250px;
+    height: 200px;
+
+    text-align: center;
 }
 
 #message {
     font-family: sourcecode;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #buttondiv {
@@ -101,6 +104,7 @@ button:hover {
     left: 36%;
     top: 52%;
     background-image: url(img/static.gif);
+    background-size: cover;
     width: 350px;
     height: 265px;
     animation-name: SCRNUP;
