@@ -10,8 +10,8 @@ var TV = document.getElementById("Screen")
 var msg = document.getElementById("message")
 var div = document.getElementById("TextBox")
 
-// Temporary variable for Interval (sound fade out effect)
-var interval = 0
+// Temporary variable for timeout (sound fade out effect)
+var timeout = 0
 
 // Animations for the TextBox
 const divAnim = [
@@ -51,20 +51,26 @@ function toggleButtons(state = "OFF") {
 
 function audioHandler(audioId = "", state = "OFF") {
     var music = document.getElementById(audioId)
-    window.clearInterval(interval)
+    clearTimeout(timeout)
 
     if (state == "OFF") {
-        window.interval = setInterval(() => {
-            music.volume -= 0.1
-            if (music.volume <= 0) {
-                window.clearInterval(interval)
-            }
-        }, 50)
+        for (let e = 0; e < 10; e++) {
+            setTimeout(() => {
+                music.volume -= 0.1
+                console.log("Current volume:", music.volume)
+            }, e * 50)
+
+            setTimeout(() => {
+                music.pause()
+                console.log("Paused")
+            }, 50 * 10);
+        }
     } else if (state == "ON") {
         music.currentTime = 0
         setTimeout(() => {
             music.volume = 1
-        music.play()
+            music.play()
+            console.log("Playing")
         }, 10);
     }
 }
