@@ -10,7 +10,7 @@ var TV = document.getElementById("Screen")
 var msg = document.getElementById("message")
 var div = document.getElementById("TextBox")
 
-// Temporary variable for Interval
+// Temporary variable for Interval (sound fade out effect)
 var interval = 0
 
 // Animations for the TextBox
@@ -104,11 +104,12 @@ function Story1() {
 
         setTimeout(typeText, 2 * time, "Um dia, ele decidiu ir a uma banca de limonada")
         
-        setTimeout(typeText, 3 * time, "Ele perguntou ao dono da banca : ")
+        setTimeout(typeText, 3 * time, "Ele perguntou ao dono da banca: ")
 
         setTimeout(typeText, 4 * time, "Hey! Got any grapes?")
+        setTimeout(changeImg, 4 * time, "DuckAsk.jpg")
 
-        setTimeout(typeText, 5 * time, "Mas o dono respondeu : ")
+        setTimeout(typeText, 5 * time, "Mas o dono respondeu: ")
 
         setTimeout(typeText, 6 * time, "Isto é uma banca de limonada, não tenho uvas.")
         setTimeout(changeImg, 6 * time, "DuckCry.gif")
